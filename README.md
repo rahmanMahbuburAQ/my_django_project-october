@@ -1,7 +1,8 @@
 ﻿# my_django_project_october
 
-```
- steps:
+
+ ## steps:
+ ```
  a. create a floder in Desktop named my_django_project_october
  b. open vs code and terminal
  c. python -m venv venv to create virtual env
@@ -15,8 +16,9 @@
  j. python manage.py8 createsuperuser
  k. python manage.py runserver
 ```
+
+## to run this app again in vs code: folder structure(my_django_project-october -> my_django_project-october -> courses)
 ```
-to run this app again in vs code: folder structure(my_django_project-october -> my_django_project-october -> courses)
 * PS C:\Users\rahmanmuhammadmahbub\Desktop\my_django_project-october> python manage.py runserver[currently inside main folder in Desktop named my_django_project-october: need to go to main app named my_django_project-october)
 * C:\Users\rahmanmuhammadmahbub\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\rahmanmuhammadmahbub\\Desktop\\my_django_project-october\\manage.py': [Errno 2] No such file or directory
 1. PS C:\Users\rahmanmuhammadmahbub\Desktop\my_django_project-october> python -m venv venv
@@ -26,9 +28,9 @@ to run this app again in vs code: folder structure(my_django_project-october -> 
 5. python manage.py migrate
 6. python manage.py runserver
 ```
-```
-After cloning a Django app from GitHub, follow these steps to set it up and run it in your local environment:
 
+## After cloning a Django app from GitHub, follow these steps to set it up and run it in your local environment:
+```
 1. Clone the Repository
 If you haven't cloned the repository yet, use the following command:
 
