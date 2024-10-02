@@ -1,5 +1,6 @@
 ﻿# my_django_project_october
 
+```
  steps:
  a. create a floder in Desktop named my_django_project_october
  b. open vs code and terminal
@@ -13,4 +14,5 @@
  i. python manage,py startapp courses/tutorial/...(api app)
  j. python manage.py8 createsuperuser
  k. python manage.py runserver
+```
  
