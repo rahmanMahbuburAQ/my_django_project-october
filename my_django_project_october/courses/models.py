@@ -6,7 +6,7 @@ class Instructor(models.Model):
     name = models.CharField(max_length=100)
     bio = models.TextField()
     email = models.EmailField(unique=True)
-    profile_image = models.ImageField(upload_to='instructors/', blank=True, null=True)  # Storing image path
+    profile_image = models.CharField(max_length=255, blank=True, null=True)  # Change to CharField to store URL
 
     def __str__(self):
         return self.name
@@ -14,6 +14,7 @@ class Instructor(models.Model):
 # Course model
 class Course(models.Model):
     title = models.CharField(max_length=200)
+    image = models.CharField(max_length=255, blank=True, null=True)  # Change to CharField to store URL
     description = models.TextField()
     price = models.DecimalField(max_digits=8, decimal_places=2)
     duration = models.IntegerField(help_text="Duration in hours")

@@ -85,6 +85,18 @@ bash
 python manage.py collectstatic
 Once these steps are complete, your Django app should be up and running.
 ```
+# If needed to clear sqlite db
+```
+Clear the Database:
+
+If none of the above steps work, and you're not in production, you can delete the db.sqlite3 file and re-run the migrations to reset the database:
+
+
+delete 001initial.py file from migrations folder
+rm db.sqlite3
+python manage.py makemigrations
+python manage.py migrate
+```
 
 
 
