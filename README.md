@@ -5,6 +5,7 @@
  ```
  a. create a floder in Desktop named my_django_project_october
  b. open vs code and terminal
+ change powershell to cmd of vs code terminal.
  c. python -m venv venv to create virtual env
  d.venv\Scripts\Activate  to activate virtual env run
  e. pip install django djangorestframework
@@ -85,6 +86,22 @@ bash
 python manage.py collectstatic
 Once these steps are complete, your Django app should be up and running.
 ```
+
+# running a django app:
+
+```
+change powershell to cmd of vs code terminal.
+dir: my_django_project_october    requirementfile.txt
+step1. create a venv by (python -m venv venv [outside root app]) if it is already created start from step2
+dir: my_django_project_october    requirementfile.txt    venv
+step2. activate venv by venv\Scripts\Activate
+step3. pip install django djangorestframework
+step4. check root app dir by [dir] 
+step5. cd my_django_project_october(root app)
+step6. python manage.py runserver 192.168.3.189:8000
+
+```
+
 # If needed to clear sqlite db
 ```
 Clear the Database:
