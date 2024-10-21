@@ -93,8 +93,15 @@ WSGI_APPLICATION = 'my_django_project_october.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',  # Change this according to your database engine
+        'NAME': 'MY_DJANGO_PROJECT_OCTOBER',
+        'USER': 'root',
+        'PASSWORD': '19911130',
+        'HOST': 'localhost',  # or your database server's IP
+        'PORT': '3306', 
+        'OPTIONS': {
+            'charset': 'utf8mb4'
+        }      # Default port for PostgreSQL
     }
 }
 

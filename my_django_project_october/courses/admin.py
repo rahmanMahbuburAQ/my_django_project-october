@@ -9,7 +9,7 @@ class InstructorAdmin(admin.ModelAdmin):
 
 # Customizing the Course admin view
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ('title', 'image', 'price', 'duration', 'level', 'instructor')  # Display key course info
+    list_display = ('title', 'image','description','free_videos','paid_videos',  'price', 'duration', 'level', 'instructor')  # Display key course info
     search_fields = ('title', 'instructor__name')  # Allow searching by title and instructor name
     list_filter = ('level', 'language')  # Filter by level and language
 
@@ -21,7 +21,7 @@ class StudentAdmin(admin.ModelAdmin):
 
 # Customizing the Enrollment admin view
 class EnrollmentAdmin(admin.ModelAdmin):
-    list_display = ('student', 'course', 'date_enrolled', 'completed')  # Show enrollment details
+    list_display = ('student', 'course','date_enrolled', 'is_purchased', 'completed')  # Show enrollment details
     search_fields = ('student__username', 'course__title')  # Search by student and course title
     list_filter = ('completed', 'date_enrolled')  # Filter by completion status and enrollment date
 

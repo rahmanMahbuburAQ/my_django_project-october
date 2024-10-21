@@ -102,7 +102,7 @@ step6. python manage.py runserver 192.168.3.189:8000
 
 ```
 
-# If needed to clear sqlite db
+## If needed to clear sqlite db
 ```
 Clear the Database:
 
@@ -114,6 +114,34 @@ rm db.sqlite3
 python manage.py makemigrations
 python manage.py migrate
 ```
+## Connect with real DB like MYSQL from default DB of sqlite3:
+
+1. Delete initial.py file from migrations folder
+Install ```https://dev.mysql.com/downloads/mysql/``` and ```https://dev.mysql.com/downloads/workbench/```
+
+2. In settings.py:
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',  # Change this according to your database engine
+        'NAME': 'MY_DJANGO_PROJECT_OCTOBER',   # DB Name
+        'USER': 'root',
+        'PASSWORD': '19911130',                # DB password
+        'HOST': 'localhost',                   # or your database server's IP
+        'PORT': '3306',                        # PORT default for MySql
+        'OPTIONS': {
+            'charset': 'utf8mb4'
+        }      
+    }
+}
+```
+3. ```pip install mysqlclient```
+4. In MySqk terminal: ```CREATE DATABASE MY_DJANGO_PROJECT_OCTOBER;``` 
+5. and ```SHOW DATABASES;```
+6. ```python manage.py makemigrations```
+7. ```python manage.py migrate```
+8. ```python manage.py createsuperuser```
+9. Check the data in DB by right clikcing on the table and select Select Rows - Limit1000
 
 
 

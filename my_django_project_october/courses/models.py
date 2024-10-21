@@ -15,9 +15,11 @@ class Instructor(models.Model):
 class Course(models.Model):
     title = models.CharField(max_length=200)
     image = models.CharField(max_length=255, blank=True, null=True)  # Change to CharField to store URL
-    description = models.TextField()
+    description = models.TextField(blank=True, null=True)
+    free_videos = models.JSONField(blank=True, null=True)  # Store links to free videos (e.g., 1-2 videos)
+    paid_videos = models.JSONField(blank=True, null=True)  # Store links to all paid videos
     price = models.DecimalField(max_digits=8, decimal_places=2)
-    duration = models.IntegerField(help_text="Duration in hours")
+    duration = models.DecimalField(help_text="Duration in hours", max_digits=8, decimal_places=2)
     level = models.CharField(max_length=100, choices=[
         ('Beginner', 'Beginner'),
         ('Intermediate', 'Intermediate'),
@@ -48,7 +50,9 @@ class Enrollment(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     date_enrolled = models.DateTimeField(auto_now_add=True)
+    is_purchased = models.BooleanField(default=False)
     completed = models.BooleanField(default=False)
+
 
     def __str__(self):
         return f"{self.student.username} enrolled in {self.course.title}"
