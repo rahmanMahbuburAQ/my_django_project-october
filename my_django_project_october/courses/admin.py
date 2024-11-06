@@ -9,7 +9,7 @@ class InstructorAdmin(admin.ModelAdmin):
 
 # Customizing the Course admin view
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ('title', 'image','description','free_videos','paid_videos',  'price', 'duration', 'level', 'instructor')  # Display key course info
+    list_display = ('title', 'image','free_videos','paid_videos',  'price', 'duration', 'level', 'instructor')  # Display key course info
     search_fields = ('title', 'instructor__name')  # Allow searching by title and instructor name
     list_filter = ('level', 'language')  # Filter by level and language
 

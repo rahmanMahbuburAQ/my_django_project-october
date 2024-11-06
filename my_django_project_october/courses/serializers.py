@@ -20,7 +20,7 @@ class CourseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Course
-        fields = ['id', 'title', 'image', 'description', 'price', 'duration', 'level', 'language', 'instructor']
+        fields = ['id', 'title', 'image', 'description','free_videos', 'paid_videos', 'price', 'duration', 'level', 'language', 'instructor']
 
 # Serializer for the Student model
 class StudentSerializer(serializers.ModelSerializer):
@@ -37,7 +37,7 @@ class EnrollmentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Enrollment
-        fields = ['id', 'student', 'course', 'date_enrolled', 'completed']
+        fields = ['id', 'student', 'course', 'date_enrolled','is_purchased', 'completed']
 
 # Serializer for the Transaction model
 class TransactionSerializer(serializers.ModelSerializer):
